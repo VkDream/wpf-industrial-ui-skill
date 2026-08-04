@@ -1,0 +1,37 @@
+name: 发布完整 Skill
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  bootstrap:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 检出仓库
+        uses: actions/checkout@v4
+
+      - name: 配置 Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: 展开完整 Skill
+        run: python bootstrap_skill.py
+
+      - name: 校验 Skill
+        run: |
+          python scripts/validate_skill.py
+          python scripts/package_skill.py
+
+      - name: 提交完整 Skill
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "feat: 发布完整 .NET 10 工业 WPF 前端设计 Skill"
+          git push
