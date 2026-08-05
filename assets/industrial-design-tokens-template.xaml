@@ -1,0 +1,234 @@
+<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:sys="clr-namespace:System;assembly=System.Runtime">
+
+    <!--
+        Template only for a project that lacks an adequate design system.
+        Do not merge this dictionary beside an authoritative project theme.
+        Map these semantic roles into the project's existing keys and BasedOn styles instead.
+    -->
+
+    <!-- Primitive colors -->
+    <Color x:Key="Ui.Color.Surface.Application">#FFF5F8FC</Color>
+    <Color x:Key="Ui.Color.Surface.Primary">#FFFFFFFF</Color>
+    <Color x:Key="Ui.Color.Surface.Secondary">#FFF0F5FB</Color>
+    <Color x:Key="Ui.Color.Surface.Elevated">#FFFFFFFF</Color>
+    <Color x:Key="Ui.Color.Border.Subtle">#FFD8E2EF</Color>
+    <Color x:Key="Ui.Color.Border.Strong">#FF9CB0C7</Color>
+    <Color x:Key="Ui.Color.Text.Primary">#FF1F2A37</Color>
+    <Color x:Key="Ui.Color.Text.Secondary">#FF5D6B7B</Color>
+    <Color x:Key="Ui.Color.Text.Muted">#FF8290A0</Color>
+    <Color x:Key="Ui.Color.Text.Inverse">#FFFFFFFF</Color>
+    <Color x:Key="Ui.Color.Accent.Primary">#FF2F6FED</Color>
+    <Color x:Key="Ui.Color.Accent.Hover">#FF245CC8</Color>
+    <Color x:Key="Ui.Color.Accent.Pressed">#FF1E4DA8</Color>
+    <Color x:Key="Ui.Color.Command.Secondary.Hover">#FFE8F1FF</Color>
+    <Color x:Key="Ui.Color.Command.Secondary.Pressed">#FFD7E7FF</Color>
+    <Color x:Key="Ui.Color.Command.Destructive">#FFB83232</Color>
+    <Color x:Key="Ui.Color.Command.Destructive.Hover">#FF9E2929</Color>
+    <Color x:Key="Ui.Color.Command.Destructive.Pressed">#FF842222</Color>
+    <Color x:Key="Ui.Color.Selection">#FFE8F1FF</Color>
+    <Color x:Key="Ui.Color.Focus">#FF2F6FED</Color>
+    <Color x:Key="Ui.Color.Status.Success">#FF287A52</Color>
+    <Color x:Key="Ui.Color.Status.Warning">#FF9A6500</Color>
+    <Color x:Key="Ui.Color.Status.Fault">#FFC13B3B</Color>
+    <Color x:Key="Ui.Color.Status.Info">#FF2F6FED</Color>
+    <Color x:Key="Ui.Color.Status.Offline">#FF697586</Color>
+    <Color x:Key="Ui.Color.Status.Simulation">#FF6F42C1</Color>
+    <Color x:Key="Ui.Color.Status.Unavailable">#FF7D8794</Color>
+    <Color x:Key="Ui.Color.Validation.Background">#FFFFEEEE</Color>
+    <Color x:Key="Ui.Color.Canvas.Background">#FF202B38</Color>
+    <Color x:Key="Ui.Color.Canvas.Overlay">#B3202B38</Color>
+    <Color x:Key="Ui.Color.Disabled.Background">#FFE8EDF3</Color>
+    <Color x:Key="Ui.Color.Disabled.Foreground">#FF8793A1</Color>
+    <Color x:Key="Ui.Color.Disabled.Border">#FFC8D1DC</Color>
+
+    <!-- Semantic brushes -->
+    <SolidColorBrush x:Key="Ui.Brush.Surface.Application" Color="{StaticResource Ui.Color.Surface.Application}" />
+    <SolidColorBrush x:Key="Ui.Brush.Surface.Primary" Color="{StaticResource Ui.Color.Surface.Primary}" />
+    <SolidColorBrush x:Key="Ui.Brush.Surface.Secondary" Color="{StaticResource Ui.Color.Surface.Secondary}" />
+    <SolidColorBrush x:Key="Ui.Brush.Surface.Elevated" Color="{StaticResource Ui.Color.Surface.Elevated}" />
+    <SolidColorBrush x:Key="Ui.Brush.Border.Subtle" Color="{StaticResource Ui.Color.Border.Subtle}" />
+    <SolidColorBrush x:Key="Ui.Brush.Border.Strong" Color="{StaticResource Ui.Color.Border.Strong}" />
+    <SolidColorBrush x:Key="Ui.Brush.Text.Primary" Color="{StaticResource Ui.Color.Text.Primary}" />
+    <SolidColorBrush x:Key="Ui.Brush.Text.Secondary" Color="{StaticResource Ui.Color.Text.Secondary}" />
+    <SolidColorBrush x:Key="Ui.Brush.Text.Muted" Color="{StaticResource Ui.Color.Text.Muted}" />
+    <SolidColorBrush x:Key="Ui.Brush.Text.Inverse" Color="{StaticResource Ui.Color.Text.Inverse}" />
+    <SolidColorBrush x:Key="Ui.Brush.Command.Primary" Color="{StaticResource Ui.Color.Accent.Primary}" />
+    <SolidColorBrush x:Key="Ui.Brush.Command.Primary.Hover" Color="{StaticResource Ui.Color.Accent.Hover}" />
+    <SolidColorBrush x:Key="Ui.Brush.Command.Primary.Pressed" Color="{StaticResource Ui.Color.Accent.Pressed}" />
+    <SolidColorBrush x:Key="Ui.Brush.Command.Secondary.Hover" Color="{StaticResource Ui.Color.Command.Secondary.Hover}" />
+    <SolidColorBrush x:Key="Ui.Brush.Command.Secondary.Pressed" Color="{StaticResource Ui.Color.Command.Secondary.Pressed}" />
+    <SolidColorBrush x:Key="Ui.Brush.Command.Destructive" Color="{StaticResource Ui.Color.Command.Destructive}" />
+    <SolidColorBrush x:Key="Ui.Brush.Command.Destructive.Hover" Color="{StaticResource Ui.Color.Command.Destructive.Hover}" />
+    <SolidColorBrush x:Key="Ui.Brush.Command.Destructive.Pressed" Color="{StaticResource Ui.Color.Command.Destructive.Pressed}" />
+    <SolidColorBrush x:Key="Ui.Brush.Selection" Color="{StaticResource Ui.Color.Selection}" />
+    <SolidColorBrush x:Key="Ui.Brush.Focus" Color="{StaticResource Ui.Color.Focus}" />
+    <SolidColorBrush x:Key="Ui.Brush.Status.Success" Color="{StaticResource Ui.Color.Status.Success}" />
+    <SolidColorBrush x:Key="Ui.Brush.Status.Warning" Color="{StaticResource Ui.Color.Status.Warning}" />
+    <SolidColorBrush x:Key="Ui.Brush.Status.Fault" Color="{StaticResource Ui.Color.Status.Fault}" />
+    <SolidColorBrush x:Key="Ui.Brush.Status.Info" Color="{StaticResource Ui.Color.Status.Info}" />
+    <SolidColorBrush x:Key="Ui.Brush.Status.Offline" Color="{StaticResource Ui.Color.Status.Offline}" />
+    <SolidColorBrush x:Key="Ui.Brush.Status.Simulation" Color="{StaticResource Ui.Color.Status.Simulation}" />
+    <SolidColorBrush x:Key="Ui.Brush.Status.Unavailable" Color="{StaticResource Ui.Color.Status.Unavailable}" />
+    <SolidColorBrush x:Key="Ui.Brush.Validation.Background" Color="{StaticResource Ui.Color.Validation.Background}" />
+    <SolidColorBrush x:Key="Ui.Brush.Canvas.Background" Color="{StaticResource Ui.Color.Canvas.Background}" />
+    <SolidColorBrush x:Key="Ui.Brush.Canvas.Overlay" Color="{StaticResource Ui.Color.Canvas.Overlay}" />
+    <SolidColorBrush x:Key="Ui.Brush.Disabled.Background" Color="{StaticResource Ui.Color.Disabled.Background}" />
+    <SolidColorBrush x:Key="Ui.Brush.Disabled.Foreground" Color="{StaticResource Ui.Color.Disabled.Foreground}" />
+    <SolidColorBrush x:Key="Ui.Brush.Disabled.Border" Color="{StaticResource Ui.Color.Disabled.Border}" />
+
+    <!-- Spacing and dimensions -->
+    <sys:Double x:Key="Ui.Space.1">4</sys:Double>
+    <sys:Double x:Key="Ui.Space.2">8</sys:Double>
+    <sys:Double x:Key="Ui.Space.3">12</sys:Double>
+    <sys:Double x:Key="Ui.Space.4">16</sys:Double>
+    <sys:Double x:Key="Ui.Space.6">24</sys:Double>
+    <sys:Double x:Key="Ui.Space.8">32</sys:Double>
+    <sys:Double x:Key="Ui.Control.Height.Compact">32</sys:Double>
+    <sys:Double x:Key="Ui.Control.Height.Standard">40</sys:Double>
+    <sys:Double x:Key="Ui.Control.Height.Operator">52</sys:Double>
+    <sys:Double x:Key="Ui.Font.Body">14</sys:Double>
+    <sys:Double x:Key="Ui.Font.Metadata">12</sys:Double>
+    <sys:Double x:Key="Ui.Font.SectionTitle">16</sys:Double>
+    <sys:Double x:Key="Ui.Font.PageTitle">20</sys:Double>
+
+    <Thickness x:Key="Ui.Thickness.ControlPadding">12,6</Thickness>
+    <Thickness x:Key="Ui.Thickness.PagePadding">20</Thickness>
+    <Thickness x:Key="Ui.Thickness.SectionGap">0,0,0,16</Thickness>
+    <CornerRadius x:Key="Ui.Corner.Control">4</CornerRadius>
+    <CornerRadius x:Key="Ui.Corner.Panel">6</CornerRadius>
+
+    <!-- Example named styles. Prefer mapping these roles into existing project styles. -->
+    <Style x:Key="Ui.Button.Base" TargetType="Button">
+        <Setter Property="MinHeight" Value="{StaticResource Ui.Control.Height.Standard}" />
+        <Setter Property="Padding" Value="{StaticResource Ui.Thickness.ControlPadding}" />
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Style.Triggers>
+            <Trigger Property="IsKeyboardFocused" Value="True">
+                <Setter Property="BorderBrush" Value="{StaticResource Ui.Brush.Focus}" />
+                <Setter Property="BorderThickness" Value="2" />
+            </Trigger>
+            <Trigger Property="IsEnabled" Value="False">
+                <Setter Property="Background" Value="{StaticResource Ui.Brush.Disabled.Background}" />
+                <Setter Property="Foreground" Value="{StaticResource Ui.Brush.Disabled.Foreground}" />
+                <Setter Property="BorderBrush" Value="{StaticResource Ui.Brush.Disabled.Border}" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style x:Key="Ui.Button.Primary" TargetType="Button" BasedOn="{StaticResource Ui.Button.Base}">
+        <Setter Property="Background" Value="{StaticResource Ui.Brush.Command.Primary}" />
+        <Setter Property="Foreground" Value="{StaticResource Ui.Brush.Text.Inverse}" />
+        <Setter Property="BorderBrush" Value="{StaticResource Ui.Brush.Command.Primary}" />
+        <Style.Triggers>
+            <MultiTrigger>
+                <MultiTrigger.Conditions>
+                    <Condition Property="IsEnabled" Value="True" />
+                    <Condition Property="IsMouseOver" Value="True" />
+                </MultiTrigger.Conditions>
+                <Setter Property="Background" Value="{StaticResource Ui.Brush.Command.Primary.Hover}" />
+            </MultiTrigger>
+            <MultiTrigger>
+                <MultiTrigger.Conditions>
+                    <Condition Property="IsEnabled" Value="True" />
+                    <Condition Property="IsPressed" Value="True" />
+                </MultiTrigger.Conditions>
+                <Setter Property="Background" Value="{StaticResource Ui.Brush.Command.Primary.Pressed}" />
+            </MultiTrigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style x:Key="Ui.Button.Secondary" TargetType="Button" BasedOn="{StaticResource Ui.Button.Base}">
+        <Setter Property="Background" Value="{StaticResource Ui.Brush.Surface.Primary}" />
+        <Setter Property="Foreground" Value="{StaticResource Ui.Brush.Command.Primary}" />
+        <Setter Property="BorderBrush" Value="{StaticResource Ui.Brush.Command.Primary}" />
+        <Style.Triggers>
+            <MultiTrigger>
+                <MultiTrigger.Conditions>
+                    <Condition Property="IsEnabled" Value="True" />
+                    <Condition Property="IsMouseOver" Value="True" />
+                </MultiTrigger.Conditions>
+                <Setter Property="Background" Value="{StaticResource Ui.Brush.Command.Secondary.Hover}" />
+            </MultiTrigger>
+            <MultiTrigger>
+                <MultiTrigger.Conditions>
+                    <Condition Property="IsEnabled" Value="True" />
+                    <Condition Property="IsPressed" Value="True" />
+                </MultiTrigger.Conditions>
+                <Setter Property="Background" Value="{StaticResource Ui.Brush.Command.Secondary.Pressed}" />
+            </MultiTrigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style x:Key="Ui.Button.Quiet" TargetType="Button" BasedOn="{StaticResource Ui.Button.Base}">
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="Foreground" Value="{StaticResource Ui.Brush.Text.Primary}" />
+        <Setter Property="BorderBrush" Value="Transparent" />
+        <Style.Triggers>
+            <MultiTrigger>
+                <MultiTrigger.Conditions>
+                    <Condition Property="IsEnabled" Value="True" />
+                    <Condition Property="IsMouseOver" Value="True" />
+                </MultiTrigger.Conditions>
+                <Setter Property="Background" Value="{StaticResource Ui.Brush.Command.Secondary.Hover}" />
+            </MultiTrigger>
+            <MultiTrigger>
+                <MultiTrigger.Conditions>
+                    <Condition Property="IsEnabled" Value="True" />
+                    <Condition Property="IsPressed" Value="True" />
+                </MultiTrigger.Conditions>
+                <Setter Property="Background" Value="{StaticResource Ui.Brush.Command.Secondary.Pressed}" />
+            </MultiTrigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style x:Key="Ui.Button.Destructive" TargetType="Button" BasedOn="{StaticResource Ui.Button.Base}">
+        <Setter Property="Background" Value="{StaticResource Ui.Brush.Command.Destructive}" />
+        <Setter Property="Foreground" Value="{StaticResource Ui.Brush.Text.Inverse}" />
+        <Setter Property="BorderBrush" Value="{StaticResource Ui.Brush.Command.Destructive}" />
+        <Style.Triggers>
+            <MultiTrigger>
+                <MultiTrigger.Conditions>
+                    <Condition Property="IsEnabled" Value="True" />
+                    <Condition Property="IsMouseOver" Value="True" />
+                </MultiTrigger.Conditions>
+                <Setter Property="Background" Value="{StaticResource Ui.Brush.Command.Destructive.Hover}" />
+            </MultiTrigger>
+            <MultiTrigger>
+                <MultiTrigger.Conditions>
+                    <Condition Property="IsEnabled" Value="True" />
+                    <Condition Property="IsPressed" Value="True" />
+                </MultiTrigger.Conditions>
+                <Setter Property="Background" Value="{StaticResource Ui.Brush.Command.Destructive.Pressed}" />
+            </MultiTrigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style x:Key="Ui.TextBox.Standard" TargetType="TextBox">
+        <Setter Property="MinHeight" Value="{StaticResource Ui.Control.Height.Compact}" />
+        <Setter Property="Padding" Value="8,4" />
+        <Setter Property="Background" Value="{StaticResource Ui.Brush.Surface.Primary}" />
+        <Setter Property="Foreground" Value="{StaticResource Ui.Brush.Text.Primary}" />
+        <Setter Property="BorderBrush" Value="{StaticResource Ui.Brush.Border.Strong}" />
+        <Setter Property="BorderThickness" Value="1" />
+        <Style.Triggers>
+            <Trigger Property="IsKeyboardFocusWithin" Value="True">
+                <Setter Property="BorderBrush" Value="{StaticResource Ui.Brush.Focus}" />
+                <Setter Property="BorderThickness" Value="2" />
+            </Trigger>
+            <Trigger Property="Validation.HasError" Value="True">
+                <Setter Property="Background" Value="{StaticResource Ui.Brush.Validation.Background}" />
+                <Setter Property="BorderBrush" Value="{StaticResource Ui.Brush.Status.Fault}" />
+            </Trigger>
+            <Trigger Property="IsEnabled" Value="False">
+                <Setter Property="Background" Value="{StaticResource Ui.Brush.Disabled.Background}" />
+                <Setter Property="Foreground" Value="{StaticResource Ui.Brush.Disabled.Foreground}" />
+                <Setter Property="BorderBrush" Value="{StaticResource Ui.Brush.Disabled.Border}" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+</ResourceDictionary>

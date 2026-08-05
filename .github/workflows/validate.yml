@@ -1,0 +1,51 @@
+name: 校验 Skill
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 检出仓库
+        uses: actions/checkout@v4
+
+      - name: 配置 Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: 校验 Python 语法
+        run: python -m py_compile scripts/audit_wpf_ui.py
+
+      - name: 校验 Skill 结构和 XAML
+        shell: python
+        run: |
+          from pathlib import Path
+          import xml.etree.ElementTree as ET
+
+          root = Path('.')
+          required = [
+              root / 'SKILL.md',
+              root / 'agents' / 'openai.yaml',
+              root / 'assets' / 'industrial-design-tokens-template.xaml',
+              root / 'scripts' / 'audit_wpf_ui.py',
+          ]
+          missing = [str(path) for path in required if not path.is_file()]
+          if missing:
+              raise SystemExit('缺少必需文件: ' + ', '.join(missing))
+
+          skill = (root / 'SKILL.md').read_text(encoding='utf-8')
+          if not skill.startswith('---\n'):
+              raise SystemExit('SKILL.md 缺少 YAML frontmatter')
+          if 'name: wpf-industrial-ui-design' not in skill:
+              raise SystemExit('SKILL.md name 不正确')
+
+          ET.parse(root / 'assets' / 'industrial-design-tokens-template.xaml')
+          print('SKILL_VALIDATION_PASS')

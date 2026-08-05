@@ -1,0 +1,7 @@
+interface:
+  display_name: "WPF 工业界面设计 R2"
+  short_description: "创建和调整专业、清晰、可验证的 .NET 10 WPF 工业界面"
+  default_prompt: "Use $wpf-industrial-ui-design to create or adjust this WPF interface while preserving the project contract and existing architecture."
+
+policy:
+  allow_implicit_invocation: true
