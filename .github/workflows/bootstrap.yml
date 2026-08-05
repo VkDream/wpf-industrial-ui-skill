@@ -1,8 +1,6 @@
 name: 发布完整 Skill
 
 on:
-  push:
-    branches: [main]
   workflow_dispatch:
 
 permissions:
@@ -25,8 +23,16 @@ jobs:
 
       - name: 校验 Skill
         run: |
-          python scripts/validate_skill.py
-          python scripts/package_skill.py
+          python -m py_compile scripts/audit_wpf_ui.py
+          python - <<'PY'
+          from pathlib import Path
+          import xml.etree.ElementTree as ET
+          ET.parse(Path('assets/industrial-design-tokens-template.xaml'))
+          text = Path('SKILL.md').read_text(encoding='utf-8')
+          assert text.startswith('---\n')
+          assert '\nname: wpf-industrial-ui-design\n' in text
+          print('SKILL_VALIDATION_PASS')
+          PY
 
       - name: 提交完整 Skill
         run: |
